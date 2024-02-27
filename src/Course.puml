@@ -73,6 +73,8 @@ class Driver {
 
 object CS5800 <<Course>> {
     + name: "CS5800"
+    + instructors: ["NimaDavarpanah"]
+    + textbooks: ["CleanCode"]
 }
 
 object NimaDavarpanah <<Instructor>> {
@@ -91,8 +93,8 @@ Driver --> Course
 Driver --> Instructor
 Driver --> Textbook
 
-Course --o Instructor
-Course --o Textbook
+Course o-- Instructor
+Course o-- Textbook
 
 Instructor --> NimaDavarpanah: Nima Davarpanah (Instructor)
 Textbook --> CleanCode: Clean Code (Textbook)

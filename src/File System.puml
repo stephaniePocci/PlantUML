@@ -1,0 +1,123 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class File {
+    __Private Data__
+    - string name
+
+    ..Constructor..
+    + File()
+
+    ..Public Accessor..
+    + string getName()
+
+    ..Public Mutator..
+    + void setName()
+
+    ..String Method..
+    + string toString()
+}
+
+class Folder {
+    __Private Data__
+    - string name
+    - ArrayList<Folder> subfolders
+    - ArrayList<File> files
+
+    ..Constructor..
+    + Folder()
+
+    ..Public Accessor..
+    + string getName()
+
+    ..Public Mutator..
+    + void setName()
+
+    ..Folder Manipulation..
+    + void removeSubFolder(string subFolderName)
+    + void addSubFolder(string subFolderName)
+    + void getSubFolder(string subFolderName)
+    + boolean removeFile(File file)
+    + void addFile(string fileName)
+
+    ..String Method..
+    + string toString()
+
+    ..Print Method..
+    + void printFolderContents()
+}
+
+class Driver {
+    + main(String[] args)
+}
+
+object php_demo1 <<Folder>> {
+    + name: "php_demo1"
+    + subfolders: [Source Files, Include Path, Remote Files]
+    + files: []
+}
+
+object SourceFiles <<Folder>> {
+    + name: "Source Files"
+    + subfolders: [phalcon, cache, public]
+    + files: [.htaccess, .htrouter, index.html]
+}
+
+object IncludePath <<Folder>> {
+    + name: "Include Path"
+    + subfolders: []
+    + files: []
+}
+
+object RemoteFiles <<Folder>> {
+    + name: "Remote Files"
+    + subfolders: []
+    + files: []
+}
+
+object phalcon <<Folder>> {
+    + name: ".phalcon"
+    + subfolders: []
+    + files: []
+}
+
+object cache <<Folder>> {
+    + name: "cache"
+    + subfolders: []
+    + files: []
+}
+
+object public <<Folder>> {
+    + name: "public"
+    + subfolders: []
+    + files: []
+}
+
+object .htaccess <<File>> {
+    + name: ".htaccess"
+}
+
+object .htrouter <<File>> {
+    + name: ".htaccess"
+}
+
+object index <<File>> {
+    + name: "index.html"
+}
+
+Driver --> File
+Driver --> Folder
+Folder *-- File: Contains
+
+Folder --> php_demo1: php_demo1 (Folder)
+php_demo1 --> IncludePath
+php_demo1 --> RemoteFiles
+php_demo1 --> SourceFiles
+SourceFiles --> phalcon
+SourceFiles --> cache
+SourceFiles --> public
+SourceFiles --> .htaccess
+SourceFiles --> index
+
+
+@enduml
