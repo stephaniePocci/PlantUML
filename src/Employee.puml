@@ -1,7 +1,7 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class Employee {
+class Employee {
     __ private data__
     - string firstName
     - string lastName
@@ -21,7 +21,7 @@ abstract class Employee {
     + string toString()
 }
 
-abstract class SalariedEmployee extends Employee {
+class SalariedEmployee extends Employee {
     __private data__
     - int weeklySalary
 
@@ -35,7 +35,7 @@ abstract class SalariedEmployee extends Employee {
     + string toString()
 }
 
-abstract class HourlyEmployee extends Employee {
+class HourlyEmployee extends Employee {
     __private data__
     - int wage
     - int hoursWorked
@@ -52,7 +52,7 @@ abstract class HourlyEmployee extends Employee {
     + string toString()
 }
 
-abstract class CommissionEmployee extends Employee {
+class CommissionEmployee extends Employee {
     __private data__
     - int commissionRate
     - int grossSales
@@ -69,7 +69,7 @@ abstract class CommissionEmployee extends Employee {
     + string toString()
 }
 
-abstract class BaseEmployee extends Employee {
+class BaseEmployee extends Employee {
     __private data__
     - int baseSalary
 
@@ -83,7 +83,7 @@ abstract class BaseEmployee extends Employee {
     + string toString()
 }
 
-abstract class Driver {
+class Driver {
     + void main(String[])
 }
 
