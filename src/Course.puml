@@ -71,11 +71,31 @@ class Driver {
     + main(String[] args)
 }
 
+object CS5800 <<Course>> {
+    + name: "CS5800"
+}
+
+object NimaDavarpanah <<Instructor>> {
+    + firstName: "Nima"
+    + lastName: "Davarpanah"
+    + officeNumber: "3-2636"
+}
+
+object CleanCode <<Textbook>> {
+    + title: "Clean Code: A Handbook of Agile Software Craftsmanship"
+    + author: "Robert C. Martin"
+    + publisher: "Prentice Hall"
+}
+
 Driver --> Course
 Driver --> Instructor
 Driver --> Textbook
 
 Course --o Instructor
 Course --o Textbook
+
+Instructor --> NimaDavarpanah: Nima Davarpanah (Instructor)
+Textbook --> CleanCode: Clean Code (Textbook)
+Course --> CS5800: CS5800 (Course)
 
 @enduml
