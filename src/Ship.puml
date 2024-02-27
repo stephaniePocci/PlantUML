@@ -2,55 +2,55 @@
 'https://plantuml.com/class-diagram
 
 class Ship {
---Protected Variables--
-# string shipName
-# string yearBuilt
+    --Protected Data--
+    # string shipName
+    # string yearBuilt
 
-..Public Accessors..
-+ string getShipName()
-+ string getYearBuilt()
+    ..Public Accessors..
+    + string getShipName()
+    + string getYearBuilt()
 
-..Public Mutators..
-+ void setShipName()
-+ void setYearBuilt()
+    ..Public Mutators..
+    + void setShipName()
+    + void setYearBuilt()
 
-..String Method..
-+ string toString()
+    ..String Method..
+    + string toString()
 
-..Print Method..
-+ void printShip()
+    ..Print Method..
+    + void printShip()
 }
 
 class CargoShip extends Ship {
-__ Private Data __
-- int cargoCapacityInTonnage
+    __ Data __
+    + int cargoCapacityInTonnage
 
-..Public Accessors..
-+ int getCargoCapacityInTonnage()
+    ..Public Accessors..
+    + int getCargoCapacityInTonnage()
 
-..Public Mutators..
-+ void setCargoCapacityInTonnage()
+    ..Public Mutators..
+    + void setCargoCapacityInTonnage()
 
-..String Method..
-+ string toString()
+    ..String Method..
+    + string toString()
 }
 
 class CruiseShip extends Ship {
-__ Private Data __
-- int maxNumberPassengers
+    __ Data __
+    + int maxNumberPassengers
 
-..Public Accessors..
-+ int getMaxNumberPassengers()
+    ..Public Accessors..
+    + int getMaxNumberPassengers()
 
-..Public Mutators..
-+ void setMaxNumberPassengers()
+    ..Public Mutators..
+    + void setMaxNumberPassengers()
 
-..String Method..
-+ string toString()
+    ..String Method..
+    + string toString()
 }
 
 class Driver {
-+ void main(String[] args)
+    + void main(String[] args)
 }
 
 Driver --> Ship

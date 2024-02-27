@@ -1,0 +1,81 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Instructor {
+    __Data__
+    + string firstName
+    + string lastName
+    + string officeNumber
+
+    ..Public Accessors..
+    + string getFirstName()
+    + string getLastName()
+    + string getOfficeNumber()
+
+    ..Public Mutators..
+    + void setFirstName()
+    + void setLastName()
+    + void setOfficeNumber()
+
+    ..String Method..
+    + string toString()
+}
+
+class Textbook {
+    __Data__
+    + string title
+    + string author
+    + string publisher
+
+    ..Public Accessors..
+    + string getTitle()
+    + string getAuthor()
+    + string getPublisher()
+
+    ..Public Mutators..
+    + void setTitle()
+    + void setAuthor()
+    + void setPublisher()
+
+    ..String Method..
+    + string toString()
+}
+
+class Course {
+    __Data__
+    + string name
+    + ArrayList<Instructor> instructors
+    + ArrayList<Textbook> textbooks
+
+    ..Constructor..
+    + Course()
+
+    ..Public Accessors..
+    + string getName()
+    + ArrayList<Instructor> getInstructors()
+    + ArrayList<Textbook> getTextbooks()
+
+    ..Public Mutators..
+    + void setName(String name)
+    + void setInstructor(Instructor instructor)
+    + void setTextbook(Textbook textbook)
+
+    ..String Method..
+    + String toString()
+
+    ..Print Method..
+    + void printCourse()
+}
+
+class Driver {
+    + main(String[] args)
+}
+
+Driver --> Course
+Driver --> Instructor
+Driver --> Textbook
+
+Course --o Instructor
+Course --o Textbook
+
+@enduml

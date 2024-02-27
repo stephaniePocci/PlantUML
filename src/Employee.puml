@@ -22,8 +22,8 @@ class Employee {
 }
 
 class SalariedEmployee extends Employee {
-    __private data__
-    - int weeklySalary
+    __Data__
+    + int weeklySalary
 
     ..Public Accessors..
     + int getWeeklySalary()
@@ -36,9 +36,9 @@ class SalariedEmployee extends Employee {
 }
 
 class HourlyEmployee extends Employee {
-    __private data__
-    - int wage
-    - int hoursWorked
+    __Data__
+    + int wage
+    + int hoursWorked
 
     ..Public Accessors..
     + int getWage()
@@ -53,9 +53,9 @@ class HourlyEmployee extends Employee {
 }
 
 class CommissionEmployee extends Employee {
-    __private data__
-    - int commissionRate
-    - int grossSales
+    __Data__
+    + int commissionRate
+    + int grossSales
 
     ..Public Accessors..
     + int getCommissionRate()
@@ -70,8 +70,8 @@ class CommissionEmployee extends Employee {
 }
 
 class BaseEmployee extends Employee {
-    __private data__
-    - int baseSalary
+    __Data__
+    + int baseSalary
 
     ..Public Accessors..
     + int getBaseSalary()
