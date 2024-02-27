@@ -53,6 +53,28 @@ class Driver {
     + void main(String[] args)
 }
 
+object Mayflower <<Ship>> {
+    + shipName: "Mayflower"
+    + yearBuilt: "1620"
+}
+
+object TheEverbean <<CargoShip>> {
+    + shipName: "TheEverbean"
+    + yearBuilt: "2005"
+    + cargoCapacityInTonnage: 100000
+}
+
+object Titanic <<CruiseShip>> {
+    + shipName: "Titantic"
+    + yearBuilt: "1912"
+    + maxNumberPassengers: 2345
+}
+
 Driver --> Ship
+Ship --> Mayflower: Mayflower (Ship)
+CargoShip --> TheEverbean: TheEverbean (CargoShip)
+CruiseShip --> Titanic: Titanic (CruiseShip)
+
+
 
 @enduml
