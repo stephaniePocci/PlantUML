@@ -1,0 +1,92 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Employee {
+    __ private data__
+    - string firstName
+    - string lastName
+    - string socialSecurityNumber
+
+    ..Public Accessors..
+    + string getFirstName()
+    + string getLastName()
+    + string getSocialSecurityNumber()
+
+    ..Public Mutators..
+    + void setFirstName()
+    + void setLastName()
+    + void setSocialSecurityNumber()
+
+    ..String Method..
+    + string toString()
+}
+
+abstract class SalariedEmployee extends Employee {
+    __private data__
+    - int weeklySalary
+
+    ..Public Accessors..
+    + int getWeeklySalary()
+
+    ..Public Mutators..
+    + void setWeeklySalary()
+
+    ..String Method..
+    + string toString()
+}
+
+abstract class HourlyEmployee extends Employee {
+    __private data__
+    - int wage
+    - int hoursWorked
+
+    ..Public Accessors..
+    + int getWage()
+    + int getHoursWorked()
+
+    ..Public Mutators..
+    + void setWage()
+    + void setHoursWorked()
+
+    ..String Method..
+    + string toString()
+}
+
+abstract class CommissionEmployee extends Employee {
+    __private data__
+    - int commissionRate
+    - int grossSales
+
+    ..Public Accessors..
+    + int getCommissionRate()
+    + int getGrossSales()
+
+    ..Public Mutators..
+    + void setCommissionRate()
+    + void setGrossSales()
+
+    ..String Method..
+    + string toString()
+}
+
+abstract class BaseEmployee extends Employee {
+    __private data__
+    - int baseSalary
+
+    ..Public Accessors..
+    + int getBaseSalary()
+
+    ..Public Mutators..
+    + void setBaseSalary()
+
+    ..String Method..
+    + string toString()
+}
+
+abstract class Driver {
+    + void main(String[])
+}
+
+Driver --> Employee
+
+@enduml
