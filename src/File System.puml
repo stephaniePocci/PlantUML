@@ -118,6 +118,7 @@ SourceFiles --> cache
 SourceFiles --> public
 SourceFiles --> .htaccess
 SourceFiles --> index
+SourceFiles --> .htrouter
 
 
 @enduml
